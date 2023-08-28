@@ -1,0 +1,32 @@
+.Loader {
+  display: block;
+  position: relative;
+  flex-grow: 1;
+  min-height: 200px;
+
+  &:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 12.5px dotted var(--light-gray-color);
+    animation: loader 2s linear infinite;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

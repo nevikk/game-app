@@ -1,0 +1,43 @@
+.GameCard {
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--light-black-color);
+  cursor: pointer;
+  color: var(--light-gray-color);
+
+  @media (any-hover: hover) {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.image {
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+.body {
+  padding: 10px;
+}
+
+.title {
+  font: var(--font-l);
+  color: var(--light-gray-color);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.publisher {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

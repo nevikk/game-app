@@ -1,0 +1,16 @@
+.NotFoundPage {
+  width: 100vw;
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  text-align: center;
+}
+
+.title {
+  color: var(--light-gray-color);
+  margin-bottom: 16px;
+}

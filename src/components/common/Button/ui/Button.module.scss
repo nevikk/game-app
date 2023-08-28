@@ -1,0 +1,19 @@
+.Button {
+  background: var(--blue-color);
+  color: var(--white-color);
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: var(--hover-blue-color);
+    }
+  }
+}
