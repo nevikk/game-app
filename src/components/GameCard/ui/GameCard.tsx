@@ -20,7 +20,7 @@ export const GameCard = memo((props: GameCardProps) => {
   } = props.game;
 
   return (
-    <Link to={`/${freetogame_profile_url}`} className={cls.GameCard}>
+    <Link to={`/game/${freetogame_profile_url}`} className={cls.GameCard}>
       <div className={cls.image}>
         <img src={thumbnail} alt="Фото" />
       </div>

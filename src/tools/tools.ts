@@ -1,25 +1,25 @@
 export const sortBy = [
   {
-    name: 'Актуальности',
+    name: 'relevance',
     param: 'relevance'
   },
   {
-    name: 'Алфавиту',
+    name: 'alphabetical',
     param: 'alphabetical'
   },
   {
-    name: 'Популярности',
+    name: 'popularity',
     param: 'popularity'
   },
   {
-    name: 'Дате выхода',
+    name: 'release date',
     param: 'release-date'
   },
 ];
 
 export const platforms = [
   {
-    name: 'Все',
+    name: 'all',
     param: 'all',
   },
   {
@@ -27,14 +27,14 @@ export const platforms = [
     param: 'pc'
   },
   {
-    name: 'Браузер',
+    name: 'browser',
     param: 'browser'
   }
 ]
 
 export const category = [
   {
-    name: 'Все',
+    name: 'all',
     param: ''
   },
   {
@@ -120,10 +120,6 @@ export const category = [
   {
     name: 'space',
     param: 'space'
-  },
-  {
-    name: 'sailing',
-    param: 'sailing'
   },
   {
     name: 'sailing',

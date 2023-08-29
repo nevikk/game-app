@@ -1,0 +1,59 @@
+.Option {
+  position: relative;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.name {
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.btn {
+  color: var(--filter-btn-color);
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  font: inherit;
+  text-transform: capitalize;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 15px;
+    background: url('../../../assets/icons/arrDown.svg') no-repeat center/contain;
+  }
+
+  @media (any-hover: hover) {
+    transition: 0.3s ease 0s;
+
+    &:hover {
+      color: var(--hover-filter-btn-color);
+    }
+  }
+}
+
+.list {}
+
+.item {
+  text-transform: capitalize;
+  color: var(--light-gray-color);
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  @media (any-hover: hover) {
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--white-color);
+    }
+  }
+}

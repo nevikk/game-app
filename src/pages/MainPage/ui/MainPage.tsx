@@ -1,40 +1,24 @@
-import { useEffect } from 'react';
-import { Container } from '../../../components/common/Container';
-import { useAppDispatch } from '../../../hooks/useAppDispatch/useAppDispatch';
-import { StateSchema } from '../../../providers/StoreProvider';
-import cls from './MainPage.module.scss';
 import { useSelector } from 'react-redux';
-import { getGameList, getGameListData, getGameListParams } from '../../../reduxSlices/GameListSlice';
-import { Loader } from '../../../components/common/Loader';
-import { GameCard } from '../../../components/GameCard';
+import { GamesList } from '../../../components/GamesList';
+import { OptionsBlock } from '../../../components/OptionsBlock';
+import { Container } from '../../../components/common/Container';
+import { StateSchema } from '../../../providers/StoreProvider';
+import cls from './MainPage.module.scss'
 
 const MainPage = () => {
-  const dispatch = useAppDispatch();
-  const params = useSelector(getGameListParams);
-  const isLoading = useSelector((state: StateSchema) => state.gameList.isLoading);
   const error = useSelector((state: StateSchema) => state.gameList.error || '');
-  const rejectCount = useSelector((state: StateSchema) => state.gameList.rejectCount || 0);
-  const data = useSelector(getGameListData);
-
-  useEffect(() => {
-    if (rejectCount < 3) {
-      dispatch(getGameList({params, count: rejectCount}));
-    }
-  }, [dispatch, params, rejectCount]);
 
   return (
     <div>
       <Container>
-        <div className={cls.list}>
-          {
-            isLoading ?
-              <Loader />
-            :
-              data.map((game, index) => (
-                <GameCard key={game.id} game={game} />
-              ))
-          }
-        </div>
+        <OptionsBlock />
+        {
+          error ?
+            (<div className={cls.errorPlug}>{error}</div>)
+          :
+            null
+        }
+        <GamesList />
       </Container>
     </div>
   );

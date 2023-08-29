@@ -1,3 +1,4 @@
+import { getGameListparamsNames } from './model/selectors/getParamsName/getParamsName';
 import { getGameListData } from './model/selectors/getData/getData';
 import { getGameListParams } from './model/selectors/getParams/getParams';
 import { getGameList } from './model/asyncThunks/getGameList';
@@ -15,5 +16,6 @@ export {
   GameListReducer,
   getGameList,
   getGameListParams,
-  getGameListData
+  getGameListData,
+  getGameListparamsNames
 }

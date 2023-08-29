@@ -8,11 +8,7 @@ export interface Game {
   freetogame_profile_url: string;
 }
 
-export interface Params {
-  platform?: string;
-  category?: string;
-  sortBy?: string;
-}
+export type Params = { [key: string]: string };
 
 export interface Param {
   name: string;

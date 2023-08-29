@@ -15,8 +15,15 @@
   --gray-color: #7a8288;
   --blue-color: #4799eb;
   --hover-blue-color: #367cc2;
+  --filter-btn-color: #e9ecef;
+  --hover-filter-btn-color: #bdc6cf;
   --white-color: #fff;
+  --dropdown-background-color: #3a3f44;
 
   // Размеры
   --navbar-height: 65px;
+
+  // z-index
+  --navbar-z-index: 20;
+  --dropdown-z-index: 5;
 }

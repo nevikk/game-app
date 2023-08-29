@@ -7,12 +7,12 @@ interface GamePageProps {
 }
 
 const GamePage = () => {
-  const { id } = useParams();
+  const { name } = useParams();
 
   return (
     <div>
       <Container>
-        GamePage {id}
+        GamePage {name}
       </Container>
     </div>
   );

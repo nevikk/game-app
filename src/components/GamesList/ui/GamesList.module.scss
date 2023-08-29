@@ -1,0 +1,10 @@
+.list {
+  margin-top: 24px;
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template: auto / 1fr;
+  }
+}
