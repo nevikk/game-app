@@ -1,9 +1,11 @@
 import { AxiosInstance } from 'axios';
 import { GameListSchema } from "../../../reduxSlices/GameListSlice";
+import { DetailGameSchema } from '../../../reduxSlices/DetailGameSlice';
 
 
 export interface StateSchema {
-  gameList: GameListSchema
+  gameList: GameListSchema,
+  detailGame: DetailGameSchema
 }
 
 // интерфейс для extra внутри ThunkApi у asyncThunk

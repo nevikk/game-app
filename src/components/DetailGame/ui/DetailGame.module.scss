@@ -1,0 +1,45 @@
+.DetailGame {
+  display: grid;
+  grid-template: auto / 1fr 2fr;
+  column-gap: 16px;
+  margin-top: 24px;
+}
+
+.leftColumn {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.rightColumn {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  margin-bottom: 8px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  color: var(--light-gray-color);
+}
+
+.title {
+  color: var(--light-gray-color);
+  font: var(--font-xl);
+  margin-bottom: 16px;
+}
+
+.reqTitle {
+  margin-bottom: 6px;
+}

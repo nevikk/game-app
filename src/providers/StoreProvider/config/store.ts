@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { GameListReducer } from '../../../reduxSlices/GameListSlice';
 import { StateSchema } from "./StateSchema";
 import { $api } from './api';
+import { DetailGameReducer } from '../../../reduxSlices/DetailGameSlice';
 
 
 export function createReduxStore(initialState?: StateSchema) {
   const rootReducers = {
-    gameList: GameListReducer
+    gameList: GameListReducer,
+    detailGame: DetailGameReducer
   }
 
   const store = configureStore({
