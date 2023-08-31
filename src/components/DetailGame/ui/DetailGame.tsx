@@ -28,6 +28,9 @@ export const DetailGame = memo((props: DetailGameProps) => {
 
   const [{detailGame: cookieDetailGame}, setCookie] = useCookies(['detailGame']);
 
+  console.log('cookieDetailGame', cookieDetailGame);
+  
+
   useEffect(() => {
     const controller = new AbortController();
     
@@ -40,12 +43,13 @@ export const DetailGame = memo((props: DetailGameProps) => {
             let date = new Date();
             date = new Date(date.setMinutes(date.getMinutes() + 5));
             console.log('date', date);
+
+            const objectToSave = cookieDetailGame ? {...cookieDetailGame, [id]: {...gameData}} : {[id]: {...gameData}}
             
             setCookie(
               "detailGame",
-              JSON.stringify({...cookieDetailGame, [id]: {...gameData}}),
+              JSON.stringify(objectToSave),
               { 
-                path: "/game",
                 expires : date
               }
             );
