@@ -1,14 +1,16 @@
-import { memo, useEffect, useState } from 'react';
+import {  memo, useEffect } from 'react';
+import { useCookies } from "react-cookie";
 import { useSelector } from 'react-redux';
+import { classNames } from '../../../helpers/ClassNames/ClassNames';
+import { formatDate } from '../../../helpers/formatDate/formatDate';
 import { useAppDispatch } from '../../../hooks/useAppDispatch/useAppDispatch';
 import { StateSchema } from '../../../providers/StoreProvider';
 import { DetailGameActions, getDetailGame, getDetailGameData } from '../../../reduxSlices/DetailGameSlice';
 import { Loader } from '../../common/Loader';
-import cls from './DetailGame.module.scss';
-import { formatDate } from '../../../helpers/formatDate/formatDate';
-import { classNames } from '../../../helpers/ClassNames/ClassNames';
 import { MyCarousel } from '../../common/MyCarousel';
-import { useCookies } from "react-cookie";
+import cls from './DetailGame.module.scss';
+import { Link } from 'react-router-dom';
+import { Button } from '../../common/Button';
 
 
 interface DetailGameProps {
@@ -28,9 +30,6 @@ export const DetailGame = memo((props: DetailGameProps) => {
 
   const [{detailGame: cookieDetailGame}, setCookie] = useCookies(['detailGame']);
 
-  console.log('cookieDetailGame', cookieDetailGame);
-  
-
   useEffect(() => {
     const controller = new AbortController();
     
@@ -42,7 +41,6 @@ export const DetailGame = memo((props: DetailGameProps) => {
             const gameData = response.payload;
             let date = new Date();
             date = new Date(date.setMinutes(date.getMinutes() + 5));
-            console.log('date', date);
 
             const objectToSave = cookieDetailGame ? {...cookieDetailGame, [id]: {...gameData}} : {[id]: {...gameData}}
             
