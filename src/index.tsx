@@ -4,6 +4,7 @@ import "./styles/index.scss";
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
 import { StoreProvider } from './providers/StoreProvider';
+import { CookiesProvider } from 'react-cookie';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,9 +12,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <StoreProvider>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
+      <CookiesProvider>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </CookiesProvider>
     </StoreProvider>
   </BrowserRouter>
 );

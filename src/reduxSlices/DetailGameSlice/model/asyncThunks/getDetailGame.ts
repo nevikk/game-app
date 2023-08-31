@@ -5,6 +5,7 @@ import { DetailGame } from "../types/detailGame";
 interface getGameListProps {
   id: string;
   count?: number;
+  controller: AbortController;
 }
 
 interface errorReturn {
@@ -31,14 +32,22 @@ export const getDetailGame = createAsyncThunk<
     const { rejectWithValue, extra } = thunkAPI;
     const {
       id,
-      count = 0
+      count = 0,
+      controller
     } = payload;
 
     try {
       const response = await extra.api.get<ReturnDetailGame>(
         '/game',
-        { params: { id } }
+        {
+          params: { id },
+          signal: controller.signal
+        }
       );
+
+      if (!response.data.id) {
+        return rejectWithValue({ count, error: 'Не удалось загрузить игру' });
+      }
 
       const detailGame = {
         id: response.data.id,

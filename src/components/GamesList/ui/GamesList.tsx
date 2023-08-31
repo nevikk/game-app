@@ -16,8 +16,14 @@ export const GamesList = memo(() => {
   const data = useSelector(getGameListData);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     if (rejectCount < 3) {
-      dispatch(getGameList({params, count: rejectCount}));
+      dispatch(getGameList({params, count: rejectCount, controller: controller}));
+    }
+
+    return () => {
+      controller.abort();
     }
   }, [dispatch, params, rejectCount]);
   return (

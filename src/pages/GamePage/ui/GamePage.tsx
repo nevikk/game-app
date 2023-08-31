@@ -1,11 +1,6 @@
 import { useParams } from 'react-router-dom';
-import cls from './GamePage.module.scss';
-import { Container } from '../../../components/common/Container';
 import { DetailGame } from '../../../components/DetailGame';
-
-interface GamePageProps {
-  className?: string;
-}
+import { Container } from '../../../components/common/Container';
 
 const GamePage = () => {
   const { id } = useParams();

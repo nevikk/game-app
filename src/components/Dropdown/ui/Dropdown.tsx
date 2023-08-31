@@ -21,9 +21,6 @@ export const Dropdown = (props: DropdownProps) => {
     btnElement
   } = props;
 
-  console.log('isOpen', isOpen);
-  
-
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const dropdownRef = useRef(null);
 
@@ -47,8 +44,6 @@ export const Dropdown = (props: DropdownProps) => {
 
   useEffect(() => {
     if(isOpen) {
-      console.log('dropdownUseEffect');
-      
       window.addEventListener('keydown', onKeyDown);
       document.addEventListener('click', clickOutsideHandler);
     }
@@ -56,8 +51,6 @@ export const Dropdown = (props: DropdownProps) => {
     return () => {
       clearTimeout(timerRef.current);
       window.removeEventListener('keydown', onKeyDown);
-      console.log('return dropdownUseEffect');
-      
       document.removeEventListener('click', clickOutsideHandler);
     }
   }, [isOpen, onKeyDown]);

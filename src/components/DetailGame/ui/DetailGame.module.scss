@@ -3,16 +3,26 @@
   grid-template: auto / 1fr 2fr;
   column-gap: 16px;
   margin-top: 24px;
+
+  @media (max-width: 768px) {
+    grid-template: auto / 1fr;
+    row-gap: 24px;
+    padding-bottom: 32px;
+  }
+}
+
+.errorPlug {
+  margin-top: 24px;
+  text-align: center;
 }
 
 .leftColumn {
   width: 100%;
-  border: 1px solid red;
 }
 
 .rightColumn {
   width: 100%;
-  border: 1px solid red;
+  overflow: hidden;
 }
 
 .avatar {
@@ -40,6 +50,22 @@
   margin-bottom: 16px;
 }
 
+.carousel {
+  margin-bottom: 24px;
+}
+
 .reqTitle {
   margin-bottom: 6px;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  flex-wrap: wrap;
+}
+
+.key {
+  text-transform: capitalize;
+  color: var(--light-gray-color);
 }

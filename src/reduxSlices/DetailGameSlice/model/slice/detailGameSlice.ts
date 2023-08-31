@@ -10,7 +10,11 @@ const initialState: DetailGameSchema = {
 export const detailGameSlice = createSlice({
   name: 'detailGame',
   initialState,
-  reducers: {},
+  reducers: {
+    setData: (state, action: PayloadAction<DetailGame>) => {
+      state.data = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getDetailGame.pending, (state) => {

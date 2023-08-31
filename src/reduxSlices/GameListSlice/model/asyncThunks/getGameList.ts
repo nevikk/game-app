@@ -5,6 +5,7 @@ import { Game, Params } from "../types/gameList";
 interface getGameListProps {
   params: Params;
   count?: number;
+  controller: AbortController;
 }
 
 interface errorReturn {
@@ -22,13 +23,17 @@ export const getGameList = createAsyncThunk<
     const { rejectWithValue, extra } = thunkAPI;
     const {
       params,
-      count = 0
+      count = 0,
+      controller
     } = payload;
 
     try {
       const response = await extra.api.get<Game[]>(
         '/games',
-        { params: { ...params } }
+        {
+          params: { ...params },
+          signal: controller.signal
+        }
       );
 
       const gameList = response.data.map(game => {
