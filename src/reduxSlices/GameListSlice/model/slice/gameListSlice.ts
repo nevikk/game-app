@@ -37,7 +37,7 @@ export const gameListSlice = createSlice({
     },
     setCategory: (state, action: PayloadAction<Param>) => {
       if (action.payload.param === '') {
-        state.params = { sortBy: state.params.sortBy, platform: state.params.platform }
+        state.params = { 'sort-by': state.params['sort-by'], platform: state.params.platform }
       } else {
         state.params.category = action.payload.param;
       }
